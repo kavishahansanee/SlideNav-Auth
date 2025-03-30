@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Jan 02, 2024 at 04:28 PM
+-- Generation Time: Mar 06, 2024 at 07:19 AM
 -- Server version: 8.0.31
 -- PHP Version: 8.0.26
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `mombump`
+-- Database: `mom_db`
 --
 
 -- --------------------------------------------------------
@@ -29,20 +29,23 @@ SET time_zone = "+00:00";
 
 DROP TABLE IF EXISTS `users`;
 CREATE TABLE IF NOT EXISTS `users` (
-  `Id` int NOT NULL AUTO_INCREMENT,
-  `Username` varchar(200) DEFAULT NULL,
-  `Email` varchar(200) DEFAULT NULL,
-  `Age` int DEFAULT NULL,
-  `Password` varchar(200) DEFAULT NULL,
-  PRIMARY KEY (`Id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `id` int NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `password` varchar(100) NOT NULL,
+  `user_type` varchar(20) NOT NULL,
+  `image` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`Id`, `Username`, `Email`, `Age`, `Password`) VALUES
-(1, 'test1', 'test1@gmail.com', 25, '1235');
+INSERT INTO `users` (`id`, `name`, `email`, `password`, `user_type`, `image`) VALUES
+(1, 'test1', 'test1@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', 'user', 'pic-4.png'),
+(2, 'test', 'test@gmail.com', '202cb962ac59075b964b07152d234b70', 'admin', 'pic-1.png'),
+(3, 'admin1', 'admin1@gmail.com', '202cb962ac59075b964b07152d234b70', '', 'pic-5.png');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
